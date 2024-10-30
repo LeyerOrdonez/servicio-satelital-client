@@ -106,7 +106,7 @@ class _LoginViewState extends State<LoginView> {
             SizedBox(height: 20),
             TextButton(
               onPressed: () {
-                context.go('/createUser');
+                context.go('/dato');
               },
               child: Text('¿No tienes cuenta? Regístrate aquí'),
             ),
