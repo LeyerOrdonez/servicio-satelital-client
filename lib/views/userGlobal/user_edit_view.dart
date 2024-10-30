@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:pokemon_pokedex/models/user.dart'; // Asegúrate de tener este modelo implementado
-import 'package:pokemon_pokedex/services/user_service.dart';
-import 'package:pokemon_pokedex/widgets/navigation_drawer_menu.dart';
+import 'package:servicio_satelital/models/user.dart'; // Asegúrate de tener este modelo implementado
+import 'package:servicio_satelital/services/user_service.dart';
+import 'package:servicio_satelital/widgets/navigation_drawer_menu.dart';
 
 /// Vista para editar un usuario existente.
 /// Permite al usuario modificar los datos del usuario seleccionado.

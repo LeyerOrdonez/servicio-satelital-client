@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:pokemon_pokedex/services/user_service.dart';
-import 'package:pokemon_pokedex/widgets/navigation_drawer_menu.dart';
+import 'package:servicio_satelital/services/user_service.dart';
+import 'package:servicio_satelital/widgets/navigation_drawer_menu.dart';
 
 class UserCreate extends StatefulWidget {
   const UserCreate({super.key});

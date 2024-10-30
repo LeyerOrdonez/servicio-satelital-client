@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:pokemon_pokedex/models/pokemon.dart';
+import 'package:servicio_satelital/models/pokemon.dart';
 
 class PokemonService {
   final String _baseUrl = 'https://pokeapi.co/api/v2';

@@ -1,14 +1,14 @@
 import 'package:go_router/go_router.dart';
 // Importa las vistas necesarias
-import 'package:pokemon_pokedex/views/login/LoginView.dart';
-import 'package:pokemon_pokedex/views/login/RegisterView.dart';
-import 'package:pokemon_pokedex/views/pokemonList/pokemon_list_view.dart';
-import 'package:pokemon_pokedex/views/teamView/teamView.dart';
-import 'package:pokemon_pokedex/views/userGlobal/user_create_view.dart';
-import 'package:pokemon_pokedex/views/userGlobal/user_delete_view.dart';
-import 'package:pokemon_pokedex/views/userGlobal/user_edit_view.dart';
-import 'package:pokemon_pokedex/views/userGlobal/user_list_view.dart';
-import 'package:pokemon_pokedex/views/userPersonal/user_profile_view.dart'; // Importa la vista de listar Pokémon
+import 'package:servicio_satelital/views/login/LoginView.dart';
+import 'package:servicio_satelital/views/login/RegisterView.dart';
+import 'package:servicio_satelital/views/pokemonList/pokemon_list_view.dart';
+import 'package:servicio_satelital/views/teamView/teamView.dart';
+import 'package:servicio_satelital/views/userGlobal/user_create_view.dart';
+import 'package:servicio_satelital/views/userGlobal/user_delete_view.dart';
+import 'package:servicio_satelital/views/userGlobal/user_edit_view.dart';
+import 'package:servicio_satelital/views/userGlobal/user_list_view.dart';
+import 'package:servicio_satelital/views/userPersonal/user_profile_view.dart'; // Importa la vista de listar Pokémon
 
 final router = GoRouter(
   routes: [

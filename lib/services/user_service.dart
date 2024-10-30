@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:pokemon_pokedex/models/user.dart';
-import 'package:pokemon_pokedex/models/pokemon.dart';
-import 'package:pokemon_pokedex/views/login/LoginDTO.dart';
+import 'package:servicio_satelital/models/user.dart';
+import 'package:servicio_satelital/models/pokemon.dart';
+import 'package:servicio_satelital/views/login/LoginDTO.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UserService {

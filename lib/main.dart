@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon_pokedex/config/router/app_router.dart';
-import 'package:pokemon_pokedex/config/router/theme/theme.dart';
+import 'package:servicio_satelital/config/router/app_router.dart';
+import 'package:servicio_satelital/config/router/theme/theme.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Pokedex',
+      title: 'Servicio Satelital Uceva',
       theme: AppTheme.lightTheme, // Aplicamos el tema claro
       darkTheme: AppTheme.darkTheme, // Aplicamos el tema oscuro (opcional)
       themeMode: ThemeMode.system, // El tema se adapta al modo del sistema

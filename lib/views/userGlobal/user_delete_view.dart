@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:pokemon_pokedex/services/user_service.dart'; // Asegúrate de tener este servicio implementado
-import 'package:pokemon_pokedex/widgets/navigation_drawer_menu.dart';
+import 'package:servicio_satelital/services/user_service.dart'; // Asegúrate de tener este servicio implementado
+import 'package:servicio_satelital/widgets/navigation_drawer_menu.dart';
 
 /// Vista para eliminar un usuario existente.
 /// Permite al usuario confirmar la eliminación del usuario seleccionado.

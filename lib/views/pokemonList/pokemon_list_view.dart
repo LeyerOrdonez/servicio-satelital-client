@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon_pokedex/models/pokemon.dart';
-import 'package:pokemon_pokedex/services/pokemon_service.dart';
-import 'package:pokemon_pokedex/views/pokemonList/pokemon_detail_view.dart';
-import 'package:pokemon_pokedex/widgets/navigation_drawer_menu.dart'; // Importa el NavigationDrawerMenu
+import 'package:servicio_satelital/models/pokemon.dart';
+import 'package:servicio_satelital/services/pokemon_service.dart';
+import 'package:servicio_satelital/views/pokemonList/pokemon_detail_view.dart';
+import 'package:servicio_satelital/widgets/navigation_drawer_menu.dart'; // Importa el NavigationDrawerMenu
 
 class PokemonList extends StatefulWidget {
   const PokemonList({Key? key}) : super(key: key);

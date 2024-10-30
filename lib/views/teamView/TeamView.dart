@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon_pokedex/models/pokemon.dart';
-import 'package:pokemon_pokedex/services/pokemon_service.dart';
-import 'package:pokemon_pokedex/services/user_service.dart';
-import 'package:pokemon_pokedex/widgets/navigation_drawer_menu.dart';
+import 'package:servicio_satelital/models/pokemon.dart';
+import 'package:servicio_satelital/services/pokemon_service.dart';
+import 'package:servicio_satelital/services/user_service.dart';
+import 'package:servicio_satelital/widgets/navigation_drawer_menu.dart';
 
 class TeamView extends StatefulWidget {
   final int teamId;
