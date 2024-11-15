@@ -6,7 +6,7 @@ import 'package:servicio_satelital/widgets/navigation_drawer_menu.dart';
 class PokemonDetailView extends StatelessWidget {
   final Pokemon pokemon;
 
-  const PokemonDetailView({Key? key, required this.pokemon}) : super(key: key);
+  const PokemonDetailView({super.key, required this.pokemon});
 
   void _showAbilityDescription(BuildContext context, String ability, String description) {
     showDialog(
@@ -47,7 +47,7 @@ class PokemonDetailView extends StatelessWidget {
       appBar: AppBar(
         title: Text(pokemon.name),
       ),
-      drawer: NavigationDrawerMenu(), // Incluye el NavigationDrawerMenu
+      drawer: const NavigationDrawerMenu(), // Incluye el NavigationDrawerMenu
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -63,9 +63,9 @@ class PokemonDetailView extends StatelessWidget {
             Text('Debilidades: ${pokemon.weaknesses.join(', ')}'),
             Text('Descripción: ${pokemon.description}'),
             const SizedBox(height: 10),
-            Text(
+            const Text(
               'Habilidades:',
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             ...pokemon.abilities.entries.map((entry) => GestureDetector(
                   onTap: () => _showAbilityDescription(context, entry.key, entry.value),

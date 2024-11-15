@@ -1,6 +1,5 @@
-import 'package:servicio_satelital/services/dato_service.dart';
-import 'dart:convert'; // Import para jsonDecode
-import 'package:http/http.dart' as http; // Import para http
+// Import para jsonDecode
+// Import para http
 
 class Dato {
   final int id;

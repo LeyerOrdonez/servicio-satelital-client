@@ -10,7 +10,7 @@ class NavigationDrawerMenu extends StatefulWidget {
 }
 
 class _NavigationDrawerMenuState extends State<NavigationDrawerMenu> {
-  String _firstName = 'Invitado'; // Valor por defecto
+  String _firstName = ''; // Valor por defecto
 
   @override
   void initState() {
@@ -73,7 +73,7 @@ class _NavigationDrawerMenuState extends State<NavigationDrawerMenu> {
               color: Colors.blue,
             ),
             child: Text(
-              'Bienvenido, $_firstName', // Muestra el nombre del usuario
+              'Bienvenido  $_firstName', // Muestra el nombre del usuario
               style: const TextStyle(
                 color: Colors.white,
                 fontSize: 24,
@@ -81,10 +81,10 @@ class _NavigationDrawerMenuState extends State<NavigationDrawerMenu> {
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.person, color: Colors.black),
+            leading: const Icon(Icons.person, color: Colors.blue),
             title: const Text(
               'Usuarios',
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(color: Colors.blue),
             ),
             onTap: () {
               context.go('/usuarios'); // Navega a la vista de usuarios
@@ -92,45 +92,59 @@ class _NavigationDrawerMenuState extends State<NavigationDrawerMenu> {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.catching_pokemon, color: Colors.black),
+            leading: const Icon(Icons.precision_manufacturing_outlined, color: Colors.blue),
             title: const Text(
-              'Pokémon',
-              style: TextStyle(color: Colors.black),
+              'Procesamientos',
+              style: TextStyle(color: Colors.blue),
             ),
             onTap: () {
-              context.go('/pokemon'); // Navega a la vista de Pokémon
+              context.go('/dato');
               Navigator.of(context).pop(); // Cierra el Drawer
             },
           ),
           ListTile(
-            leading: const Icon(Icons.group, color: Colors.black),
+            leading: const Icon(Icons.map, color: Colors.blue),
             title: const Text(
-              'Mi Equipo',
-              style: TextStyle(color: Colors.black),
+              'Mis Procesamientos',
+              style: TextStyle(color: Colors.blue),
             ),
-            onTap: () async {
-              final prefs = await SharedPreferences.getInstance();
-              final teamId = prefs.getInt('id'); // Retrieve the teamId
-
-              if (teamId != null) {
-                context.go('/team/$teamId'); // Pass the teamId to the route
-              } else {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                      content:
-                          Text('No se ha encontrado el equipo del usuario')),
-                );
-              }
+            onTap: () {
+              context.go('/dato'); 
               Navigator.of(context).pop(); // Cierra el Drawer
-            },
+            }
           ),
           ListTile(
-            leading: const Icon(Icons.account_circle, color: Colors.black),
-            title: const Text('Perfil', style: TextStyle(color: Colors.black)),
+            leading: const Icon(Icons.account_circle, color: Colors.blue),
+            title: const Text('Perfil', style: TextStyle(color: Colors.blue)),
             onTap: () {
               context.go('/perfil'); // Navega a la vista de perfil de usuario
               Navigator.of(context).pop(); // Cierra el Drawer
-            },
+            }
+          ),
+          const Divider(), // Línea divisoria
+           ListTile(
+            leading: const Icon(Icons.book, color: Colors.green),
+            title: const Text('Manual de usuario', style: TextStyle(color: Colors.green)),
+            onTap: () {
+              context.go('/'); // Navega a la vista de perfil de usuario
+              Navigator.of(context).pop(); // Cierra el Drawer
+            }
+          ),
+          ListTile(
+            leading: const Icon(Icons.info, color: Colors.green),
+            title: const Text('Informacion de la aplicacion', style: TextStyle(color: Colors.green)),
+            onTap: () {
+              context.go('/'); // Navega a la vista de perfil de usuario
+              Navigator.of(context).pop(); // Cierra el Drawer
+            }
+          ),
+          ListTile(
+            leading: const Icon(Icons.key, color: Colors.green),
+            title: const Text('Configuracion', style: TextStyle(color: Colors.green)),
+            onTap: () {
+              context.go('/'); // Navega a la vista de perfil de usuario
+              Navigator.of(context).pop(); // Cierra el Drawer
+            }
           ),
           const Divider(), // Línea divisoria
           ListTile(

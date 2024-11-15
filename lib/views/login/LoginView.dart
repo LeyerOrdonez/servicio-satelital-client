@@ -4,6 +4,8 @@ import 'package:servicio_satelital/services/user_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginView extends StatefulWidget {
+  const LoginView({super.key});
+
   @override
   _LoginViewState createState() => _LoginViewState();
 }
@@ -82,33 +84,66 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: const Text('Login'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            Container(
+            padding: const EdgeInsets.all(16.0),
+            decoration: BoxDecoration(
+            color: Colors.white, // Fondo blanco
+            borderRadius: BorderRadius.circular(20.0), // Bordes redondeados
+             ),
+            child: const Text(
+            'Bienvenido a servicio satelital', // Texto estático
+             style: TextStyle(color: Colors.black), // Texto negro
+             ),
+             ),
+            const SizedBox(height: 40),
             TextField(
               controller: _emailController,
-              decoration: InputDecoration(labelText: 'Correo Electrónico'),
-              keyboardType: TextInputType.emailAddress,
+              decoration: InputDecoration(labelText: 'Correo Electrónico', filled: true, 
+              fillColor: const Color.fromARGB(255, 255, 255, 255) ,
+              border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20.0), // Bordes redondeados
+              borderSide: BorderSide.none, // Sin borde exterior
+              ),),
+          
             ),
+            const SizedBox(height: 10),
             TextField(
               controller: _passwordController,
-              decoration: InputDecoration(labelText: 'Contraseña'),
-              obscureText: true,
+              decoration: InputDecoration(labelText: 'Contraseña',filled: true,
+              fillColor: const Color.fromARGB(255, 255, 255, 255),
+              border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20.0), // Bordes redondeados
+              borderSide: BorderSide.none, // Sin borde exterior
+              ),),
+         
             ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _login,
+            const SizedBox(height: 20),
+            const ElevatedButton(
+              onPressed: null,
               child: Text('Iniciar Sesión'),
+              
+
             ),
-            SizedBox(height: 20),
-            TextButton(
-              onPressed: () {
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed:() {
                 context.go('/dato');
               },
-              child: Text('¿No tienes cuenta? Regístrate aquí'),
+              child: const Text('Ingreso Local'),
+            
+            ),
+            const SizedBox(height: 20),
+            TextButton(
+              onPressed: () {
+                context.go('/createUser');
+              },
+              child: const Text('¿No tienes cuenta? Regístrate aquí'),
             ),
           ],
         ),

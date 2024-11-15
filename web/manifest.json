@@ -1,6 +1,6 @@
 {
-    "name": "pokemon_pokedex",
-    "short_name": "pokemon_pokedex",
+    "name": "servicio-satelital",
+    "short_name": "servicio satelital",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

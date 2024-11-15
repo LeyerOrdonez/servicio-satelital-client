@@ -8,7 +8,7 @@ import 'package:servicio_satelital/views/userGlobal/user_create_view.dart';
 import 'package:servicio_satelital/views/userGlobal/user_delete_view.dart';
 import 'package:servicio_satelital/views/userGlobal/user_edit_view.dart';
 import 'package:servicio_satelital/views/userGlobal/user_list_view.dart';
-import 'package:servicio_satelital/views/userPersonal/user_profile_view.dart'; // Importa la vista de listar Pokémon
+import 'package:servicio_satelital/views/userPersonal/user_profile_view.dart';
 import 'package:servicio_satelital/views/datoList/dato_list_view.dart'; 
 
 final router = GoRouter(
@@ -70,5 +70,6 @@ final router = GoRouter(
       builder: (context, state) =>
           const DatoList(), // Vista para listar data
     ),
+   
   ],
 );

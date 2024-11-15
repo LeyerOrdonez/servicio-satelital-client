@@ -5,7 +5,7 @@ import 'package:servicio_satelital/views/pokemonList/pokemon_detail_view.dart';
 import 'package:servicio_satelital/widgets/navigation_drawer_menu.dart'; // Importa el NavigationDrawerMenu
 
 class PokemonList extends StatefulWidget {
-  const PokemonList({Key? key}) : super(key: key);
+  const PokemonList({super.key});
 
   @override
   State<PokemonList> createState() => _PokemonListState();
@@ -50,7 +50,7 @@ class _PokemonListState extends State<PokemonList> {
       appBar: AppBar(
         title: const Text('Lista de Pokémon (3ra Generación)'),
       ),
-      drawer: NavigationDrawerMenu(), // Incluye el NavigationDrawerMenu
+      drawer: const NavigationDrawerMenu(), // Incluye el NavigationDrawerMenu
       body: FutureBuilder<List<Pokemon>>(
         future: _futurePokemons,
         builder: (context, snapshot) {

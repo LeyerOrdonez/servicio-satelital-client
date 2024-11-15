@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:servicio_satelital/views/datoList/dato_detail_view.dart';
 import 'package:servicio_satelital/widgets/navigation_drawer_menu.dart'; // Importa el NavigationDrawerMenu
-
 import 'package:servicio_satelital/models/dato.dart';
 import 'package:servicio_satelital/services/dato_service.dart';
 
 class DatoList extends StatefulWidget {
-  const DatoList({Key? key}) : super(key: key);
+  const DatoList({super.key});
 
   @override
   State<DatoList> createState() => _DatoListState();
@@ -48,9 +47,9 @@ class _DatoListState extends State<DatoList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Lista de Datos'),
+        title: const Text('Lista de Procesamientos'),
       ),
-      drawer: NavigationDrawerMenu(), // Incluye el NavigationDrawerMenu
+      drawer: const NavigationDrawerMenu(), // Incluye el NavigationDrawerMenu
       body: FutureBuilder<List<Dato>>(
         future: _futureDatos,
         builder: (context, snapshot) {
@@ -64,8 +63,8 @@ class _DatoListState extends State<DatoList> {
                     itemBuilder: (context, index) {
                       final dato = datos[index];
                       return ListTile(
-                        title: Text('${dato.name}'),
-                        subtitle: Text('Descripción: ${dato.description}'),
+                        title: Text(dato.name),
+                        subtitle: Text('Descripción: ${dato.description}'  ' Fecha del procesamiento: ${dato.dateProccess}'),
                         onTap: () {
                           // Navega a la vista de detalles al hacer clic en el Dato
                           Navigator.of(context).push(

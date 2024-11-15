@@ -7,7 +7,7 @@ import 'package:servicio_satelital/widgets/navigation_drawer_menu.dart';
 class TeamView extends StatefulWidget {
   final int teamId;
 
-  const TeamView({Key? key, required this.teamId}) : super(key: key);
+  const TeamView({super.key, required this.teamId});
 
   @override
   _TeamViewState createState() => _TeamViewState();
@@ -35,7 +35,7 @@ class _TeamViewState extends State<TeamView> {
       appBar: AppBar(
         title: const Text('Mi Equipo'),
       ),
-      drawer: NavigationDrawerMenu(), // Incluye el NavigationDrawerMenu
+      drawer: const NavigationDrawerMenu(), // Incluye el NavigationDrawerMenu
       body: FutureBuilder<List<Pokemon>>(
         future: _teamPokemonDetails,
         builder: (context, snapshot) {
