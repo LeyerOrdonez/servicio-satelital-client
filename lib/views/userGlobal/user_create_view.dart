@@ -68,9 +68,24 @@ class _UserCreateState extends State<UserCreate> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Crear Usuario'),
+        title: const Text('Información Adicional'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            context.go('/dato');
+          },
+        ),
+        
+      actions: [
+        IconButton(
+          icon: const Icon(Icons.settings),
+          onPressed: () {
+            context.go('/configApp');
+          },
+        ),
+      ],
       ),
-      drawer: const NavigationDrawerMenu(), // Usamos el widget personalizado
+      
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(

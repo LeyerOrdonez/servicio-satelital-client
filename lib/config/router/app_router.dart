@@ -1,4 +1,6 @@
 import 'package:go_router/go_router.dart';
+import 'package:servicio_satelital/views/infoAndOthers/configuration.dart';
+import 'package:servicio_satelital/views/infoAndOthers/infoApp.dart';
 // Importa las vistas necesarias
 import 'package:servicio_satelital/views/login/LoginView.dart';
 import 'package:servicio_satelital/views/login/RegisterView.dart';
@@ -10,6 +12,7 @@ import 'package:servicio_satelital/views/userGlobal/user_edit_view.dart';
 import 'package:servicio_satelital/views/userGlobal/user_list_view.dart';
 import 'package:servicio_satelital/views/userPersonal/user_profile_view.dart';
 import 'package:servicio_satelital/views/datoList/dato_list_view.dart'; 
+import 'package:servicio_satelital/views/infoAndOthers/usermanualApp.dart'; 
 
 final router = GoRouter(
   routes: [
@@ -69,6 +72,22 @@ final router = GoRouter(
       path: '/dato',
       builder: (context, state) =>
           const DatoList(), // Vista para listar data
+    ),
+    
+    GoRoute(
+      path: '/infoApp',
+      builder: (context, state) =>
+          const InfoView(), // Vista para info
+    ),
+    GoRoute(
+      path: '/manualApp',
+      builder: (context, state) =>
+          const ManualView(), // Vista para manual
+    ),
+    GoRoute(
+      path: '/configApp',
+      builder: (context, state) =>
+          const SettingsView(), // Vista para ajustes
     ),
    
   ],

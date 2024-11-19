@@ -61,7 +61,7 @@ class _LoginViewState extends State<LoginView> {
         await _saveId(
             int.parse(loginResponse['id']!)); //Guardar ID en SharedPreferences
         
-        context.go('/pokemon');
+        context.go('/dato');
       } else {
         _showSnackBar('Correo o Password incorrecta');
       }
@@ -86,67 +86,84 @@ class _LoginViewState extends State<LoginView> {
       appBar: AppBar(
         title: const Text('Login'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            Container(
+      body: Stack(
+        children: [
+          // Imagen de fondo que llena toda la pantalla
+          Positioned.fill(
+            child: Image.network(
+              'https://firebasestorage.googleapis.com/v0/b/imagenes-satelital-procesadas.appspot.com/o/backgorund.jpg?alt=media&token=f854913d-858b-482c-95f5-ef726348edc0',
+              fit: BoxFit.cover, // Asegura que la imagen cubra todo el área
+            ),
+          ),
+          // Contenido del formulario de login
+          Padding(
             padding: const EdgeInsets.all(16.0),
-            decoration: BoxDecoration(
-            color: Colors.white, // Fondo blanco
-            borderRadius: BorderRadius.circular(20.0), // Bordes redondeados
-             ),
-            child: const Text(
-            'Bienvenido a servicio satelital', // Texto estático
-             style: TextStyle(color: Colors.black), // Texto negro
-             ),
-             ),
-            const SizedBox(height: 40),
-            TextField(
-              controller: _emailController,
-              decoration: InputDecoration(labelText: 'Correo Electrónico', filled: true, 
-              fillColor: const Color.fromARGB(255, 255, 255, 255) ,
-              border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(20.0), // Bordes redondeados
-              borderSide: BorderSide.none, // Sin borde exterior
-              ),),
-          
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(16.0),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.8), // Fondo blanco semitransparente
+                      borderRadius: BorderRadius.circular(20.0), // Bordes redondeados
+                    ),
+                    child: const Text(
+                      'Bienvenido a servicio satelital', // Texto estático
+                      style: TextStyle(color: Colors.black), // Texto negro
+                    ),
+                  ),
+                  const SizedBox(height: 40),
+                  TextField(
+                    controller: _emailController,
+                    decoration: InputDecoration(
+                      labelText: 'Correo Electrónico',
+                      filled: true,
+                      fillColor: const Color.fromARGB(255, 255, 255, 255),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                        borderSide: BorderSide.none,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  TextField(
+                    controller: _passwordController,
+                    decoration: InputDecoration(
+                      labelText: 'Contraseña',
+                      filled: true,
+                      fillColor: const Color.fromARGB(255, 255, 255, 255),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                        borderSide: BorderSide.none,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: /*_login*/ null
+                      ,
+                    child: const Text('Iniciar Sesión'),
+                    
+                  ),
+                  const SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: () {
+                      context.go('/dato');
+                    },
+                    child: const Text('Ingreso Local'),
+                  ),
+                  const SizedBox(height: 20),
+                  TextButton(
+                    onPressed: () {
+                      context.go('/createUser');
+                    },
+                    child: const Text('¿No tienes cuenta? Regístrate aquí'),
+                  ),
+                ],
+              ),
             ),
-            const SizedBox(height: 10),
-            TextField(
-              controller: _passwordController,
-              decoration: InputDecoration(labelText: 'Contraseña',filled: true,
-              fillColor: const Color.fromARGB(255, 255, 255, 255),
-              border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(20.0), // Bordes redondeados
-              borderSide: BorderSide.none, // Sin borde exterior
-              ),),
-         
-            ),
-            const SizedBox(height: 20),
-            const ElevatedButton(
-              onPressed: null,
-              child: Text('Iniciar Sesión'),
-              
-
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed:() {
-                context.go('/dato');
-              },
-              child: const Text('Ingreso Local'),
-            
-            ),
-            const SizedBox(height: 20),
-            TextButton(
-              onPressed: () {
-                context.go('/createUser');
-              },
-              child: const Text('¿No tienes cuenta? Regístrate aquí'),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

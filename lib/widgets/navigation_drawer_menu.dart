@@ -126,7 +126,7 @@ class _NavigationDrawerMenuState extends State<NavigationDrawerMenu> {
             leading: const Icon(Icons.book, color: Colors.green),
             title: const Text('Manual de usuario', style: TextStyle(color: Colors.green)),
             onTap: () {
-              context.go('/'); // Navega a la vista de perfil de usuario
+              context.go('/manualApp'); // Navega a la vista de manual
               Navigator.of(context).pop(); // Cierra el Drawer
             }
           ),
@@ -134,7 +134,7 @@ class _NavigationDrawerMenuState extends State<NavigationDrawerMenu> {
             leading: const Icon(Icons.info, color: Colors.green),
             title: const Text('Informacion de la aplicacion', style: TextStyle(color: Colors.green)),
             onTap: () {
-              context.go('/'); // Navega a la vista de perfil de usuario
+              context.go('/infoApp'); // Navega a la vista de informacion
               Navigator.of(context).pop(); // Cierra el Drawer
             }
           ),
@@ -142,7 +142,7 @@ class _NavigationDrawerMenuState extends State<NavigationDrawerMenu> {
             leading: const Icon(Icons.key, color: Colors.green),
             title: const Text('Configuracion', style: TextStyle(color: Colors.green)),
             onTap: () {
-              context.go('/'); // Navega a la vista de perfil de usuario
+              context.go('/configApp'); // Navega a la vista de perfil de configuracion
               Navigator.of(context).pop(); // Cierra el Drawer
             }
           ),
