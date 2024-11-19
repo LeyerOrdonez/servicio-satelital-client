@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart'; // Agregar esta línea
 import 'package:servicio_satelital/config/router/app_router.dart';
 import 'package:servicio_satelital/config/router/theme/theme.dart';
+import 'package:servicio_satelital/config/router/theme/theme_controller.dart'; // Agregar esta línea
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  // Carga las variables de entorno
-// Cambia esta URL a la que necesites
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => themeController, // Proveedor del controlador del tema
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -14,11 +19,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeController = Provider.of<ThemeController>(context);
+
     return MaterialApp.router(
       title: 'Servicio Satelital Uceva',
-      theme: AppTheme.lightTheme, // Aplicamos el tema claro
-      darkTheme: AppTheme.darkTheme, // Aplicamos el tema oscuro (opcional)
-      themeMode: ThemeMode.system, // El tema se adapta al modo del sistema
+      theme: AppTheme.lightTheme, // Tema claro
+      darkTheme: AppTheme.darkTheme, // Tema oscuro
+      themeMode: themeController.themeMode, // Modo dinámico basado en ThemeController
       routerConfig: router,
     );
   }

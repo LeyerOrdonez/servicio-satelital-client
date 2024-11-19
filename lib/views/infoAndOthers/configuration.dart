@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:servicio_satelital/config/router/theme/theme_controller.dart';
 import 'package:go_router/go_router.dart';
-
 
 class SettingsView extends StatefulWidget {
   const SettingsView({super.key});
@@ -10,20 +11,21 @@ class SettingsView extends StatefulWidget {
 }
 
 class _SettingsViewState extends State<SettingsView> {
-  bool _darkMode = false; // Estado del modo oscuro
   String _selectedLanguage = 'Español'; // Idioma predeterminado
   bool _highContrast = false; // Contraste alto para accesibilidad
 
   @override
   Widget build(BuildContext context) {
+    final themeController = Provider.of<ThemeController>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Configuración'),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            context.go('/dato');
-          },
+                      context.go('/dato');
+                    },
         ),
       ),
       body: Padding(
@@ -43,18 +45,17 @@ class _SettingsViewState extends State<SettingsView> {
             // Alternar modo oscuro
             SwitchListTile(
               title: const Text('Modo Oscuro'),
-              value: _darkMode,
+              value: themeController.themeMode == ThemeMode.dark,
               onChanged: (bool value) {
-                setState(() {
-                  _darkMode = value;
-                });
+                themeController.toggleTheme(value);
               },
             ),
             const Divider(),
             // Accesibilidad - Contraste alto
             SwitchListTile(
               title: const Text('Contraste Alto'),
-              subtitle: const Text('Mejorar visibilidad para usuarios con baja visión.'),
+              subtitle:
+                  const Text('Mejorar visibilidad para usuarios con baja visión.'),
               value: _highContrast,
               onChanged: (bool value) {
                 setState(() {

@@ -4,8 +4,6 @@ import 'package:servicio_satelital/views/infoAndOthers/infoApp.dart';
 // Importa las vistas necesarias
 import 'package:servicio_satelital/views/login/LoginView.dart';
 import 'package:servicio_satelital/views/login/RegisterView.dart';
-import 'package:servicio_satelital/views/pokemonList/pokemon_list_view.dart';
-import 'package:servicio_satelital/views/teamView/teamView.dart';
 import 'package:servicio_satelital/views/userGlobal/user_create_view.dart';
 import 'package:servicio_satelital/views/userGlobal/user_delete_view.dart';
 import 'package:servicio_satelital/views/userGlobal/user_edit_view.dart';
@@ -48,11 +46,8 @@ final router = GoRouter(
       },
     ),
     // Ruta para listar Pokémon
-    GoRoute(
-      path: '/pokemon',
-      builder: (context, state) =>
-          const PokemonList(), // Vista para listar Pokémon
-    ),
+    
+    
     GoRoute(
       path: '/perfil',
       builder: (context, state) => const UserProfileView(),
@@ -61,13 +56,7 @@ final router = GoRouter(
       path: '/createUser',
       builder: (context, state) => const UserRegister(), // Pasa el ID del equipo aquí
     ),
-    GoRoute(
-      path: '/team/:teamId', // Include teamId as a route parameter
-      builder: (context, state) {
-        final teamId = int.parse(state.params['teamId']!); // Parse teamId from route
-        return TeamView(teamId: teamId);
-      },
-    ),
+   
     GoRoute(
       path: '/dato',
       builder: (context, state) =>
